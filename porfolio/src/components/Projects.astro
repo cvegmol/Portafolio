@@ -1,0 +1,60 @@
+---
+import HTMLIcon from "./icons/HTML.astro"
+
+const TAGS = {
+     HTML: {
+        name: "Htmlererre",
+        class: "bg-black/70 text-white",
+        icon: HTMLIcon,
+    },
+    CSS: {
+        name: "Html",
+        class: "bg-white text-black",
+        icon: HTMLIcon,
+    }
+}
+
+
+
+const PROJECTS = [
+    {
+        title:'Project',
+        description:'Lorem iNon culpa nulla tempor Lorem veniam labore.Adipisicing est officia in adipisicing duis dolore veniam nostrud esse qui aliquip.',
+        link:'#',
+        github:'#',
+        image:'public/images/projects/p1.png',
+        tags: [TAGS.HTML,TAGS.CSS]
+
+    },
+    
+]
+---
+{
+    PROJECTS.map(project=>
+        <article>
+            <h3 
+            class="text-2xl font-semibold text-yellow-200 mb-2"
+            >{project.title}</h3>
+            <p
+            class="text-lg mb-4 text-pretty"
+            >{project.description}</p>
+            <ul class="flex  gap-x-2 flex-row">
+                {
+                    project.tags.map(tag=>(
+                       
+                            <li>
+                                 <span class={`flex gap-x-2 rounded-full text-xs items-center ${tag.class} py-2 px-1`}>
+                                    <tag.icon class="size-4"/>{tag.name}
+                                 </span>
+                            </li>
+
+                        
+                        
+                    ))
+                }
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/20" 
+            src={project.image} alt="Captura de pantalla del Proyecto"/>
+        </article>
+    )
+}

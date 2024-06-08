@@ -1,11 +1,36 @@
-<header class="flex  justify-between items-center py-3 w-[1120px] mx-auto">
+<style>
+     .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0f172a; 
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        z-index: 1000; 
+    }
+
+    .navbar-links a {
+        text-decoration: none;
+        color: #fffff; 
+        font-weight: 500; 
+        margin-right: 1.5rem; 
+        transition: color 0.3s ease; 
+    }
+
+    .navbar-links a:hover {
+        color: #007bff; 
+    }
+</style>
+<header class="navbar">
     
-    <img src="/public/images/foto.jpg" alt="Foto" class="rounded-full w-12 h-12 "/>
-    <nav class="flex flex-row gap-x-10 opacity-90">
-        
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+    <nav class="navbar-links ml-auto">
+        <a href="/">Inicio</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobremi">Sobre mi</a>
     </nav>
 </header>
